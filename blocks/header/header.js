@@ -447,11 +447,16 @@ export default async function decorate(block) {
 
    const isAuthor = isAuthorEnvironment();
     let navPath =`/${langCode}/nav`;
-  
-    if(isAuthor){
-      navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}/nav`;
+
+    // change nave for each microsite here
+    let micronav = "";
+    if(window.location.href.includes('neuropax')){
+      micronav = "/pharma/neuropax";
     }
-   
+
+    if(isAuthor){
+      navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}${micronav}/nav`;
+    }
 
   
   //const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
