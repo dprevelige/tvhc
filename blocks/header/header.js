@@ -457,7 +457,7 @@ export default async function decorate(block) {
     if(isAuthor){
       navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}${micronav}/nav`;
     } else {
-      navPath = `/content/${siteName}${PATH_PREFIX}/${langCode}${micronav}/nav`;
+      navPath = `/${langCode}${micronav}/nav`;
     }
 
   
