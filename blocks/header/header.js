@@ -451,13 +451,13 @@ export default async function decorate(block) {
     // change nave for each microsite here
     let micronav = "";
     if(window.location.href.includes('neuropax')){
-      micronav = "/pharma/neuropax";
+      micronav = "/neuropax";
     }
 
     if(isAuthor){
       navPath = navMeta ? new URL(navMeta, window.location).pathname : `/content/${siteName}${PATH_PREFIX}/${langCode}${micronav}/nav`;
     } else {
-      navPath = `/${langCode}${micronav}/nav`;
+      navPath = `/${micronav}/nav`;  // temp fix for en site untils paths worked out
     }
 
   
