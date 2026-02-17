@@ -344,6 +344,13 @@ body.green-theme {
   --main-accent-color: #00c4ff;
   --nav-text-color:#000000;
 }
+.neuropax-theme {
+  --brand-theme-color: #0048A8;
+  --brand-nav-text-color:#000000;
+  --main-accent-color: #0048A8;
+  --nav-text-color:#000000;
+}
+
 /*brand header footer brand themes*/
 body header .nav-wrapper{
   background-color: var(--nav-background-color);

@@ -227,6 +227,13 @@ function readBlockConfig(block) {
       }
     }
   });
+  // to add microsite specific config to add class during decoration for different css
+  if (window.location.pathname.includes('pharma/neuropax')) {
+    config.microsite = 'neuropax';
+  } else {
+    config.microsite = '';
+  }
+
   return config;
 }
 

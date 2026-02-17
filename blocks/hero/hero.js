@@ -7,6 +7,7 @@ import { readBlockConfig } from '../../scripts/aem.js';
  * @param {Element} block
  */
 export default function decorate(block) {
+  const properties = readBlockConfig(block);
   // Get the enable underline setting from the block content (3rd div)
   const enableUnderline = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || 'true';
   
@@ -66,4 +67,5 @@ export default function decorate(block) {
     backgroundStyleDiv.style.display = 'none';
   }
 
+  //block.classList.add(`${properties.microsite}`);
 }

@@ -158,6 +158,7 @@ export default function decorate(block) {
   teaser.querySelector('.teaser-title').innerHTML = properties.title ? rteContent : 'Title';
   block.innerHTML = '';
   block.appendChild(teaser);
+  //block.classList.add(`${properties.microsite}`);
 
   // add observer for video and listeners for play/pause
   if (isVideo) observeVideo(block, videoAutoplay);
