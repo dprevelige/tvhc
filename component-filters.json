@@ -13,6 +13,7 @@
       "button",
       "cards",
       "carousel",
+      "cfteaser",
       "columns",
       "contentfragment",
       "dm-template",
@@ -62,6 +63,7 @@
     "id": "column",
     "components": [
       "button",
+      "cfteaser",
       "image",
       "text",      
       "title",
