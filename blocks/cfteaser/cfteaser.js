@@ -2,7 +2,7 @@ import { getMetadata } from '../../scripts/aem.js';
 import { isAuthorEnvironment, moveInstrumentation } from '../../scripts/scripts.js';
 import { getHostname, mapAemPathToSitePath } from '../../scripts/utils.js';
 import { readBlockConfig } from '../../scripts/aem.js';
-import { ffetch } from '../../scripts/ffetch.js';
+
 
 /**
  *
