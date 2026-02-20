@@ -47,20 +47,12 @@
                 "value": ""
               },
               {
-                "name": "Image Left",
-                "value": "image-left"
-              },
-              {
-                "name": "Image Right",
-                "value": "image-right"
-              },
-              {
                 "name": "Image Top",
-                "value": "image-top"
+                "value": "Top Image CTA"
               },
               {
-                "name": "Image Bottom",
-                "value": "image-bottom"
+                "name": "Image Left",
+                "value": "Left Image CTA"
               }
             
             ]

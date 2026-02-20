@@ -194,6 +194,10 @@ header nav .nav-brand img {
   width: auto;
   height: 48px;
 }
+.neuropax-theme header .nav-wrapper {
+  position: initial;
+}
+
 /* sections */
 header nav .nav-sections {
   grid-area: sections;

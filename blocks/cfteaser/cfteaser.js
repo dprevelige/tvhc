@@ -2,21 +2,25 @@ import { getMetadata } from '../../scripts/aem.js';
 import { isAuthorEnvironment, moveInstrumentation } from '../../scripts/scripts.js';
 import { getHostname, mapAemPathToSitePath } from '../../scripts/utils.js';
 import { readBlockConfig } from '../../scripts/aem.js';
+import { ffetch } from '../../scripts/ffetch.js';
 
 /**
  *
  * @param {Element} block
  */
 export default async function decorate(block) {
-	// Configuration
+	
+  // Configuration
   const UNIQUE_ID = 'dpreveli_adobedemoamericas275my1820831919654__185JadeCrocodile';
-  const WEBHOOK_URL = 'https://hook.app.workfrontfusion.com/6qezw31mfq7r1ytgabcqifhn16v4uyw5';
+  //const WEBHOOK_URL = 'https://hook.app.workfrontfusion.com/6qezw31mfq7r1ytgabcqifhn16v4uyw5';
+  const WEBHOOK_URL = 'https://hook.app.workfrontfusion.com/xy2bm8b8x94fjn53iis1sh1im4k79nxj';
   const TEMPLATE_NAME = 'Top Image CTA';
 	
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
 	const variationname = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim()?.toLowerCase()?.replace(' ', '_') || 'master';
 	const displayStyle = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || '';
 
+  const isAuthor = isAuthorEnvironment();
 
   block.innerHTML = '';
   const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + TEMPLATE_NAME + '&cfPath=' + contentPath + '&variation=' + variationname;
@@ -33,7 +37,7 @@ export default async function decorate(block) {
 	          variationname,
 	          isAuthor
         	});
-          block.innerHTML = '';
+          block.innerHTML = '<div>Webhook Error</div>';
           return; // Exit early if response is not ok
         } 
 
@@ -49,7 +53,7 @@ export default async function decorate(block) {
 	          variationname,
 	          isAuthor
         	});
-          block.innerHTML = '';
+          block.innerHTML = '<div>Parse Error</div>';
           return;
         }
         const parser = new DOMParser();
@@ -62,7 +66,7 @@ export default async function decorate(block) {
           overlay.setAttribute('data-aue-filter', 'contentfragment');
           block.innerHTML = overlay.outerHTML;
         } else {
-          block.innerHTML = '';
+          block.innerHTML = '<div>Empty</div>';
         }
       } catch (error) {
         console.error('Error rendering content fragment:', {
@@ -72,7 +76,7 @@ export default async function decorate(block) {
           variationname,
           isAuthor
         });
-        block.innerHTML = '';
+        block.innerHTML = '<div>Error rendering</div>';
       }
 
 }
