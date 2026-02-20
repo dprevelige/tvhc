@@ -23,7 +23,7 @@ export default async function decorate(block) {
   const isAuthor = isAuthorEnvironment();
 
   block.innerHTML = '';
-  const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + TEMPLATE_NAME + '&cfPath=' + contentPath + '&variation=' + variationname;
+  const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + TEMPLATE_NAME + '&cfPath=' + contentPath + '&variation=' + variationname + '&isAuthor=' + isAuthor;
   const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationname}`;
     try {
         // Fetch data
