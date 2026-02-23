@@ -150,5 +150,8 @@
   },
   {
     "...": "../blocks/*/_*.json#/models"
+  },
+  {
+    "...": "./_section.json#/models"
   }
 ]
