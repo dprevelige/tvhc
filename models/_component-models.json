@@ -153,5 +153,17 @@
   },
   {
     "...": "./_section.json#/models"
+  },
+  {
+    "...": "./_image.json#/models"
+  },
+  {
+    "...": "./_text.json#/models"
+  },
+  {
+    "...": "./_title.json#/models"
+  },
+  {
+    "...": "./_button.json#/models"
   }
 ]
