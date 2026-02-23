@@ -406,6 +406,10 @@ header {
   right: 0;
   z-index: 111;
 }
+.neuropax-theme header {
+  min-height: unset;
+  height: auto;
+}
 
 header .header,
 footer .footer {
@@ -479,7 +483,7 @@ pre {
 }
 
 main {
-  margin-top: 90px;
+  /* margin-top: 90px; */
   padding-top: 20px;
 }
 main > div {
