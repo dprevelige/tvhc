@@ -491,3 +491,16 @@ picture {
 .hero.block.overlay .button-container.cta-link a.button::after  ,.hero.image-background-text-left .button-container.cta-link a.button::after,.hero.image-background-text-right .button-container.cta-link a.button::after  {
   color: var(--text-light);
 }
+
+@media (width < 900px) {
+.neuropax-theme .hero.block.overlay div:nth-child(2) {
+  position: absolute;
+  top: 12%;
+}
+}
+@media (width >= 900px) {
+  .neuropax-theme .hero.block.overlay div:nth-child(2) {
+    position: absolute;
+    top: 24%;
+  }
+  }

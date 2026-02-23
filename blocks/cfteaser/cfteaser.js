@@ -18,12 +18,12 @@ export default async function decorate(block) {
 	
   const contentPath = block.querySelector(':scope div:nth-child(1) > div a')?.textContent?.trim();
 	const variationname = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim()?.toLowerCase()?.replace(' ', '_') || 'master';
-	const displayStyle = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || '';
+	const displayStyle = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || TEMPLATE_NAME;
 
   const isAuthor = isAuthorEnvironment();
 
   block.innerHTML = '';
-  const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + TEMPLATE_NAME + '&cfPath=' + contentPath + '&variation=' + variationname + '&isAuthor=' + isAuthor;
+  const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + displayStyle + '&cfPath=' + contentPath + '&variation=' + variationname + '&isAuthor=' + isAuthor;
   const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationname}`;
     try {
         // Fetch data
