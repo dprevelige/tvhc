@@ -364,8 +364,12 @@ function decorateTemplateAndTheme() {
   };
   const template = getMetadata('template');
   if (template) addClasses(document.body, template);
-  const theme = getMetadata('theme');
+  let theme = getMetadata('theme');
+  if (window.location.pathname.includes('pharma/neuropax')) {
+    theme = 'neuropax-theme';
+  } 
   if (theme) addClasses(document.body, theme);
+
 }
 
 /**
