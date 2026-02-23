@@ -21,7 +21,7 @@ export default async function decorate(block) {
 	const displayStyle = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || TEMPLATE_NAME;
 
   const isAuthor = isAuthorEnvironment();
-
+console.log("in cfteaser js");
   block.innerHTML = '';
   const params = '?uniqueID=' + UNIQUE_ID + '&templateName=' + displayStyle + '&cfPath=' + contentPath + '&variation=' + variationname + '&isAuthor=' + isAuthor;
   const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationname}`;
