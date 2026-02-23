@@ -6288,7 +6288,7 @@
       },
       {
         "component": "select",
-        "name": "layout",
+        "name": "sec-layout",
         "value": "",
         "label": "Component Layout",
         "valueType": "string",
