@@ -478,6 +478,10 @@ pre {
   white-space: pre;
 }
 
+main {
+  margin-top: 90px;
+  padding-top: 20px;
+}
 main > div {
   margin: 40px 16px;
 }
