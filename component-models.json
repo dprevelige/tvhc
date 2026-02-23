@@ -6287,6 +6287,23 @@
         ]
       },
       {
+        "component": "select",
+        "name": "layout",
+        "value": "",
+        "label": "Component Layout",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Side by Side",
+            "value": "sidebyside"
+          }
+        ]
+      },
+      {
         "component": "container",
         "label": "Background Image",
         "name": "container",
