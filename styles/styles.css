@@ -797,8 +797,12 @@ main > .section[data-sec-full-width="true"] > div {
   margin: 0;
   padding: 0;
 }
-
-
+main > .section[data-sec-layout="sidebyside"] {
+  text-align:center;
+}
+main > .section[data-sec-layout="sidebyside"] > div {
+  display: inline-block;
+}
 /* Section Background Colors */
 main .section.bg-theme {  
   background-color: var(--main-accent-color);
