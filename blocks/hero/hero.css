@@ -15,6 +15,10 @@
   justify-content: center;
 }
 
+.neuropax-theme .hero {
+  min-height: 100px;
+  padding: 0;
+}
 /* --------------------------
    Headings & Paragraphs
 --------------------------- */
@@ -63,7 +67,9 @@
   inset: 0;
   box-sizing: border-box;
 }
-
+.neuropax-theme .hero picture {
+  position: relative;
+}
 .hero img {
   object-fit: cover;
   object-position: left;
@@ -335,6 +341,7 @@ picture {
 --------------------------- */
 @media (width >= 900px) {
   .hero { padding: 40px 32px; }
+  .neuropax-theme .hero { padding: 0; }
   .hero-wrapper a.button { padding: 14px 28px; font-size: 18px; }
 }
 

@@ -608,6 +608,15 @@ main picture::before {
 	-webkit-transform: skewX(-25deg);
 	transform: skewX(-25deg);
 }
+.neuropax-theme main picture::before {
+	position: relative;
+	top: 0;
+	left: -75%;
+	z-index: 111;
+	display: block;
+	content: unset;
+  width: auto;
+}
 main picture:hover::before {
 	-webkit-animation: shine .75s;
 	animation: shine .75s;
