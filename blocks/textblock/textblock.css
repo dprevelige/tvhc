@@ -14,6 +14,9 @@
   color: var(--text-color);
 }
 
+.textblock-content h1 {
+  color: var(--brand-theme-color);
+}
 /* Alignment variants */
 .textblock-align-left .textblock-content {
   text-align: left;
