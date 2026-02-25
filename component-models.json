@@ -6074,6 +6074,68 @@
     ]
   },
   {
+    "id": "textblock",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "alignment",
+        "label": "Alignment",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "width",
+        "label": "Width",
+        "options": [
+          {
+            "name": "100%",
+            "value": "100%"
+          },
+          {
+            "name": "90%",
+            "value": "90%"
+          },
+          {
+            "name": "80%",
+            "value": "80%"
+          },
+          {
+            "name": "70%",
+            "value": "70%"
+          },
+          {
+            "name": "60%",
+            "value": "60%"
+          },
+          {
+            "name": "50%",
+            "value": "50%"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "video",
     "fields": [
       {

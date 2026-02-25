@@ -396,6 +396,10 @@ body.blue-theme header .nav-wrapper nav .nav-sections ul > li > a::before{
 body.blue-theme header .nav-wrapper nav .nav-sections ul > li > a:hover{
   color: var(--text-light);
 }
+
+bod.neuropax-theme h1 {
+  color: var(--brand-theme-color);
+}
 /*theme header-footer*/
 header {
   height: var(--nav-height);
@@ -815,6 +819,7 @@ main > .section[data-sec-layout="sidebyside"] {
 }
 main > .section[data-sec-layout="sidebyside"] > div {
   display: inline-block;
+  vertical-align: top;
 }
 /* Section Background Colors */
 main .section.bg-theme {  
