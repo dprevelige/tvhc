@@ -121,6 +121,7 @@ async function readLoginCookie() {
       } else {
         console.log("couldn't find login wrapper");
       }
+    }
   }
 }
 
