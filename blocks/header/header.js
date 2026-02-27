@@ -573,12 +573,14 @@ export default async function decorate(block) {
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
     // Add fake login
-    const loginWrapper = createLoginWrapper();
-    contentWrapper.append(loginWrapper);
-    setEventsForLoginWrapper();
+
     
     // Language switcher (minimal UI)
     try {
+      const targetContainer = contentWrapper || navTools;
+      const loginWrapper = createLoginWrapper();
+      targetContainer.append(loginWrapper);
+      setEventsForLoginWrapper();
       const currentLang = getLanguage();
       const langWrap = document.createElement('div');
       langWrap.className = 'lang-switcher';
@@ -650,7 +652,7 @@ export default async function decorate(block) {
         }
       });
       langWrap.append(langBtn, langMenu);
-      const targetContainer = contentWrapper || navTools;
+      
       targetContainer.append(langWrap);
     } catch (e) {
       // eslint-disable-next-line no-console
