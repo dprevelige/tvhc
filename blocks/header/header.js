@@ -357,22 +357,7 @@ function setLoginValue(loginame) {
   console.log("set cookie: " + encodeURIComponent(loginame));
 }
 
-function readLoginCookie() {
-  console.log("looking for cookie");
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
-    console.log(c);
-    if (c.indexOf("hcdemologin") === 0) {
-      const loginame = c.substring("hcdemologin".length, c.length)
-      const logincontainer = document.querySelector(".login-wrapper");
-      const signinlabel = logincontainer.querySelector("#signinlabel");
-      signinlabel.textContent = "Welcome, " + loginame;
-      const nameinput = logincontainer.querySelector("input");
-      nameinput.value = loginname;
-    }
-  }
-}
+
 async function addLogoLink(langCode) {
 
   //urn:aemconnection:/content/wknd-universal/language-masters/en/magazine/jcr:content
