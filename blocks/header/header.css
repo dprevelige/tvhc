@@ -503,3 +503,9 @@ header nav .nav-tools .lang-switcher { display: inline-flex; }
   }
 
 }
+
+.login-wrapper {font-size: .8rem;}
+.login-modal {position: absolute; top: 50px; background-color: #DDD; border: 1px solid #AAA; padding: 10px; }
+.login-modal.close {display: none;}
+.login-btn {color: #FFF; background-color: blue; border-radius: 6px;padding: 4px;}
+.login-modal input {margin-bottom: 8px;}
