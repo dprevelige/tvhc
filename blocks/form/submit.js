@@ -89,8 +89,8 @@ async function prepareRequest(form) {
     url = baseUrl + btoa(`${form.dataset.action}.json`);
   } else {
     //ugly fix to submit to aem and not eds
-    // url = form.dataset.action; 
-    url = "https://author-p182083-e1919654.adobeaemcloud.com" + form.dataset.action;
+    url = form.dataset.action; 
+    //url = "https://author-p182083-e1919654.adobeaemcloud.com" + form.dataset.action;
   }
   return { headers, body, url };
 }
