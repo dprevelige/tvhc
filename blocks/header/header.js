@@ -332,8 +332,8 @@ function createLoginWrapper() {
 
   return wrapper;
 }
-function setEventsForLoginWrapper() {
-  const loginwrapper = document.querySelector(".login-wrapper");
+function setEventsForLoginWrapper(loginwrapper) {
+
 	const signinlabel = loginwrapper.querySelector("#signinlabel");
 	signinlabel.addEventListener("click",() => {
 	  const loginmodal = loginwrapper.querySelector(".login-modal");
@@ -579,8 +579,9 @@ export default async function decorate(block) {
     try {
       const targetContainer = contentWrapper || navTools;
       const loginWrapper = createLoginWrapper();
+      setEventsForLoginWrapper(loginWrapper);
       targetContainer.append(loginWrapper);
-      setEventsForLoginWrapper();
+      
       const currentLang = getLanguage();
       const langWrap = document.createElement('div');
       langWrap.className = 'lang-switcher';
