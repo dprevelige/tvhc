@@ -348,6 +348,8 @@ function setEventsForLoginWrapper(loginwrapper) {
     loginmodal.classList.toggle("close");
   });
   
+  loginwrapper.addEventListener("load",() => {console.log("login wrapper loaded");});
+  loginwrapper.addEventListener("DOMContentLoaded",() => {console.log("login wrapper loaded");});
 }
 
 function setLoginValue(loginame) {

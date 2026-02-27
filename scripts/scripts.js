@@ -113,11 +113,14 @@ async function readLoginCookie() {
     if (c.indexOf("hcdemologin") === 0) {
       const loginame = c.substring("hcdemologin".length, c.length)
       const logincontainer = document.querySelector(".login-wrapper");
-      const signinlabel = logincontainer.querySelector("#signinlabel");
-      signinlabel.textContent = "Welcome, " + loginame;
-      const nameinput = logincontainer.querySelector("input");
-      nameinput.value = loginname;
-    }
+      if (logincontainer) {
+        const signinlabel = logincontainer.querySelector("#signinlabel");
+        signinlabel.textContent = "Welcome, " + loginame;
+        const nameinput = logincontainer.querySelector("input");
+        nameinput.value = loginname;
+      } else {
+        console.log("couldn't find login wrapper");
+      }
   }
 }
 
