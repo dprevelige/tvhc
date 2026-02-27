@@ -339,17 +339,7 @@ function setEventsForLoginWrapper(loginwrapper) {
 	  const loginmodal = loginwrapper.querySelector(".login-modal");
 		loginmodal.classList.toggle("close");
 	});
-  loginwrapper.addEventListener("load",() => {
-    console.log("looking for cookie");
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i].trim();
-      console.log(c);
-      if (c.indexOf("hcdemologin") === 0) {
-        setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
-      }
-    }
-  });
+
 	const loginbtn = loginwrapper.querySelector(".login-btn");
 	loginbtn.addEventListener("click",() => {
     const fldval = loginwrapper.querySelector("input").value;
@@ -359,13 +349,30 @@ function setEventsForLoginWrapper(loginwrapper) {
   });
   
 }
+
 function setLoginValue(loginame) {
-  const signinlabel = loginwrapper.querySelector("#signinlabel");
+  const signinlabel = document.querySelector("#signinlabel");
   signinlabel.textContent = "Welcome, " + loginame;
   document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
   console.log("set cookie: " + encodeURIComponent(loginame));
 }
 
+function readLoginCookie() {
+  console.log("looking for cookie");
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    console.log(c);
+    if (c.indexOf("hcdemologin") === 0) {
+      const loginame = c.substring("hcdemologin".length, c.length)
+      const logincontainer = document.querySelector(".login-wrapper");
+      const signinlabel = logincontainer.querySelector("#signinlabel");
+      signinlabel.textContent = "Welcome, " + loginame;
+      const nameinput = logincontainer.querySelector("input");
+      nameinput.value = loginname;
+    }
+  }
+}
 async function addLogoLink(langCode) {
 
   //urn:aemconnection:/content/wknd-universal/language-masters/en/magazine/jcr:content
