@@ -106,11 +106,11 @@ function readLoginCookie() {
     let c = ca[i].trim();
     console.log(c);
     if (c.indexOf("hcdemologin") === 0) {
-      const loginame = c.substring("hcdemologin".length, c.length)
+      const loginname = c.substring("hcdemologin".length, c.length)
       const logincontainer = document.querySelector(".login-wrapper");
       if (logincontainer) {
         const signinlabel = logincontainer.querySelector("#signinlabel");
-        signinlabel.textContent = "Welcome, " + loginame;
+        signinlabel.textContent = "Welcome, " + loginname;
         const nameinput = logincontainer.querySelector("input");
         nameinput.value = loginname;
       } else {
