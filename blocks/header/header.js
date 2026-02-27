@@ -307,7 +307,7 @@ const closeSearchOnFocusOut = (e, navTools) => {
  * @returns {HTMLDivElement} root login wrapper element
  */
 function createLoginWrapper() {
-  const wrapper = div({ class: 'login-wrapper' });
+  const wrapper = div({ class: 'login-wrapper close' });
 
   const labelContainer = div({ class: 'login-label' });
   const signInP = document.createElement('p');
