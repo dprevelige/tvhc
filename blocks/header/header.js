@@ -302,6 +302,67 @@ const closeSearchOnFocusOut = (e, navTools) => {
   }
 };
 
+/**
+ * Creates a login wrapper element with label, input, and submit button.
+ * @returns {HTMLDivElement} root login wrapper element
+ */
+function createLoginWrapper() {
+  const wrapper = div({ class: 'login-wrapper' });
+
+  const labelContainer = div({ class: 'login-label' });
+  const signInP = document.createElement('p');
+  signInP.id = 'signinlabel';
+  signInP.textContent = 'Sign In';
+  labelContainer.appendChild(signInP);
+
+  const modal = div({ class: 'login-modal' });
+
+  const emailLabel = document.createElement('label');
+  emailLabel.setAttribute('for', 'emailsignin');
+  emailLabel.textContent = 'Enter Email';
+
+  const emailInput = document.createElement('input');
+  emailInput.name = 'emailsignin';
+  emailInput.id = 'emailsignin';
+
+  const submitSpan = span({ class: 'login-btn' }, 'Submit');
+
+  modal.append(emailLabel, emailInput, submitSpan);
+  wrapper.append(labelContainer, modal);
+
+  return wrapper;
+}
+function setEventsForLoginWrapper() {
+  const loginwrapper = document.querySelector(".login-wrapper");
+	const signinlabel = loginwrapper.querySelector("#signinlabel");
+	signinlabel.addEventListener("click",() => {
+	  const loginmodal = loginwrapper.querySelector(".login-modal");
+		loginmodal.classList.toggle("close");
+	});
+	const loginbtn = loginwrapper.querySelector(".login-btn");
+	loginbtn.addEventListener("click",() => {
+    const fldval = loginwrapper.querySelector("input").value;
+    setLoginValue(fldval);
+    const loginmodal = loginwrapper.querySelector(".login-modal");
+    loginmodal.classList.toggle("close");
+  })
+  function setLoginValue(loginame) {
+    const signinlabel = loginwrapper.querySelector("#signinlabel");
+    signinlabel.textContent = "Welcome, " + loginame;
+    document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
+    console.log("set cookie: " + encodeURIComponent(loginame));
+  }
+  document.addEventListener("DOMContentLoaded",() => {
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      if (c.indexOf("hcdemologin") === 0) {
+        setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
+      }
+    }
+  })
+}
+
 async function addLogoLink(langCode) {
 
   //urn:aemconnection:/content/wknd-universal/language-masters/en/magazine/jcr:content
@@ -320,6 +381,9 @@ async function addLogoLink(langCode) {
       }
     }
 
+    if (window.location.pathname.includes('pharma/neuropax')) {
+      logoLink = logoLink + '/${langCode}/pharma/neuropax';
+    }
     try {
       const logoImage = document.querySelector('.nav-brand img');
       const anchor = document.createElement('a');
@@ -508,6 +572,11 @@ export default async function decorate(block) {
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const contentWrapper = nav.querySelector('.nav-tools > div[class = "default-content-wrapper"]');
+    // Add fake login
+    const loginWrapper = createLoginWrapper();
+    contentWrapper.append(loginWrapper);
+    setEventsForLoginWrapper();
+    
     // Language switcher (minimal UI)
     try {
       const currentLang = getLanguage();
