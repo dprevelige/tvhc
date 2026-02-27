@@ -339,7 +339,7 @@ function setEventsForLoginWrapper(loginwrapper) {
 	  const loginmodal = loginwrapper.querySelector(".login-modal");
 		loginmodal.classList.toggle("close");
 	});
-  signinlabel.addEventListener("load",() => {
+  loginwrapper.addEventListener("load",() => {
     console.log("looking for cookie");
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -349,21 +349,21 @@ function setEventsForLoginWrapper(loginwrapper) {
         setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
       }
     }
-  })
+  });
 	const loginbtn = loginwrapper.querySelector(".login-btn");
 	loginbtn.addEventListener("click",() => {
     const fldval = loginwrapper.querySelector("input").value;
     setLoginValue(fldval);
     const loginmodal = loginwrapper.querySelector(".login-modal");
     loginmodal.classList.toggle("close");
-  })
-  function setLoginValue(loginame) {
-    const signinlabel = loginwrapper.querySelector("#signinlabel");
-    signinlabel.textContent = "Welcome, " + loginame;
-    document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
-    console.log("set cookie: " + encodeURIComponent(loginame));
-  }
+  });
   
+}
+function setLoginValue(loginame) {
+  const signinlabel = loginwrapper.querySelector("#signinlabel");
+  signinlabel.textContent = "Welcome, " + loginame;
+  document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
+  console.log("set cookie: " + encodeURIComponent(loginame));
 }
 
 async function addLogoLink(langCode) {
