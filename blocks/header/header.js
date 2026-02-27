@@ -339,6 +339,17 @@ function setEventsForLoginWrapper(loginwrapper) {
 	  const loginmodal = loginwrapper.querySelector(".login-modal");
 		loginmodal.classList.toggle("close");
 	});
+  signinlabel.addEventListener("load",() => {
+    console.log("looking for cookie");
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i].trim();
+      console.log(c);
+      if (c.indexOf("hcdemologin") === 0) {
+        setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
+      }
+    }
+  })
 	const loginbtn = loginwrapper.querySelector(".login-btn");
 	loginbtn.addEventListener("click",() => {
     const fldval = loginwrapper.querySelector("input").value;
@@ -352,17 +363,7 @@ function setEventsForLoginWrapper(loginwrapper) {
     document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
     console.log("set cookie: " + encodeURIComponent(loginame));
   }
-  document.addEventListener("DOMContentLoaded",() => {
-    console.log("looking for cookie");
-    const ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-      let c = ca[i].trim();
-      console.log(c);
-      if (c.indexOf("hcdemologin") === 0) {
-        setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
-      }
-    }
-  })
+  
 }
 
 async function addLogoLink(langCode) {
