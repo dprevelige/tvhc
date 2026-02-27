@@ -353,9 +353,11 @@ function setEventsForLoginWrapper(loginwrapper) {
     console.log("set cookie: " + encodeURIComponent(loginame));
   }
   document.addEventListener("DOMContentLoaded",() => {
+    console.log("looking for cookie");
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
       let c = ca[i].trim();
+      console.log(c);
       if (c.indexOf("hcdemologin") === 0) {
         setLoginValue(decodeURIComponent(c.substring("hcdemologin".length, c.length)));
       }
@@ -382,7 +384,7 @@ async function addLogoLink(langCode) {
     }
 
     if (window.location.pathname.includes('pharma/neuropax')) {
-      logoLink = logoLink + '/${langCode}/pharma/neuropax';
+      logoLink = logoLink + '/' + currentLang + '/pharma/neuropax';
     }
     try {
       const logoImage = document.querySelector('.nav-brand img');
