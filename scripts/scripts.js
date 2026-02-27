@@ -104,26 +104,7 @@ async function loadFonts() {
   }
 }
 
-async function readLoginCookie() {
-  console.log("looking for cookie");
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
-    console.log(c);
-    if (c.indexOf("hcdemologin") === 0) {
-      const loginame = c.substring("hcdemologin".length, c.length)
-      const logincontainer = document.querySelector(".login-wrapper");
-      if (logincontainer) {
-        const signinlabel = logincontainer.querySelector("#signinlabel");
-        signinlabel.textContent = "Welcome, " + loginame;
-        const nameinput = logincontainer.querySelector("input");
-        nameinput.value = loginname;
-      } else {
-        console.log("couldn't find login wrapper");
-      }
-    }
-  }
-}
+
 
 /**
  * Return the placeholder file specific to language
@@ -417,7 +398,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
-  readLoginCookie();
+  
 }
 
 function isDMOpenAPIUrl(src) {

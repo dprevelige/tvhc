@@ -332,7 +332,7 @@ function createLoginWrapper() {
 
   return wrapper;
 }
-function setEventsForLoginWrapper(loginwrapper) {
+async function setEventsForLoginWrapper(loginwrapper) {
 
 	const signinlabel = loginwrapper.querySelector("#signinlabel");
 	signinlabel.addEventListener("click",() => {
@@ -352,7 +352,7 @@ function setEventsForLoginWrapper(loginwrapper) {
   loginwrapper.addEventListener("DOMContentLoaded",() => {console.log("login wrapper loaded");});
 }
 
-function setLoginValue(loginame) {
+async function setLoginValue(loginame) {
   const signinlabel = document.querySelector("#signinlabel");
   signinlabel.textContent = "Welcome, " + loginame;
   document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
