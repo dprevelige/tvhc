@@ -332,6 +332,7 @@ function createLoginWrapper() {
 
   return wrapper;
 }
+
 async function setEventsForLoginWrapper(loginwrapper) {
 
 	const signinlabel = loginwrapper.querySelector("#signinlabel");
@@ -352,6 +353,28 @@ async function setEventsForLoginWrapper(loginwrapper) {
   
 }
 
+async function handleLoginCookie(loginWrapper) {
+  console.log("looking for cookie");
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    console.log(c);
+    if (c.indexOf("hcdemologin") === 0) {
+      const loginname = decodeURIComponent(c.substring("hcdemologin=".length, c.length));
+      const logincontainer = doc.querySelector(".login-wrapper");
+      if (logincontainer) {
+        const signinlabel = logincontainer.querySelector("#signinlabel");
+        signinlabel.textContent = "Welcome, " + loginname;
+        const nameinput = logincontainer.querySelector("input");
+        nameinput.value = loginname;
+      } else {
+        console.log("couldn't find login wrapper");
+      }
+    }
+  }
+  const ecid = sessionStorage.getItem("com.adobe.reactor.dataElements.ECID");
+  console.log("ecid: " + ecid);
+}
 
 async function addLogoLink(langCode) {
 
@@ -570,6 +593,7 @@ export default async function decorate(block) {
       const targetContainer = contentWrapper || navTools;
       const loginWrapper = createLoginWrapper();
       setEventsForLoginWrapper(loginWrapper);
+      handleLoginCookie(loginWrapper);
       targetContainer.append(loginWrapper);
       
       const currentLang = getLanguage();
