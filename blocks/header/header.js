@@ -343,20 +343,13 @@ async function setEventsForLoginWrapper(loginwrapper) {
 	const loginbtn = loginwrapper.querySelector(".login-btn");
 	loginbtn.addEventListener("click",() => {
     const fldval = loginwrapper.querySelector("input").value;
-    setLoginValue(fldval);
+    const signinlabel = loginwrapper.querySelector("#signinlabel");
+    signinlabel.textContent = "Welcome, " + fldval;
+    document.cookie = "hcdemologin="+encodeURIComponent(fldval)+"; path=/";
     const loginmodal = loginwrapper.querySelector(".login-modal");
     loginmodal.classList.toggle("close");
   });
   
-  loginwrapper.addEventListener("load",() => {console.log("login wrapper loaded");});
-  loginwrapper.addEventListener("DOMContentLoaded",() => {console.log("login wrapper loaded");});
-}
-
-async function setLoginValue(loginame) {
-  const signinlabel = document.querySelector("#signinlabel");
-  signinlabel.textContent = "Welcome, " + loginame;
-  document.cookie = "hcdemologin="+encodeURIComponent(loginame)+"; path=/";
-  console.log("set cookie: " + encodeURIComponent(loginame));
 }
 
 

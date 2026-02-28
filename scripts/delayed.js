@@ -118,6 +118,8 @@ function readLoginCookie() {
       }
     }
   }
+  const ecid = sessionStorage.getItem("com.adobe.reactor.dataElements.ECID");
+  console.log("ecid: " + ecid);
 }
 
 if (!window.location.hostname.includes('localhost')) {
