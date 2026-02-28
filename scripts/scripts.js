@@ -843,7 +843,7 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
-async function loadLast(params) {
+function loadLast(doc) {
   console.log("looking for cookie");
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
@@ -851,7 +851,7 @@ async function loadLast(params) {
     console.log(c);
     if (c.indexOf("hcdemologin") === 0) {
       const loginname = decodeURIComponent(c.substring("hcdemologin=".length, c.length));
-      const logincontainer = document.querySelector(".login-wrapper");
+      const logincontainer = doc.querySelector(".login-wrapper");
       if (logincontainer) {
         const signinlabel = logincontainer.querySelector("#signinlabel");
         signinlabel.textContent = "Welcome, " + loginname;
@@ -870,7 +870,7 @@ async function loadPage() {
   window.wbgData ||= {};
   await loadEager(document);
   await loadLazy(document);
-  await loadLast(document);
+  loadLast(document);
   loadDelayed();
 }
 
