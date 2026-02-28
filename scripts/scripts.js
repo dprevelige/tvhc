@@ -843,10 +843,34 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+async function loadLast(params) {
+  console.log("looking for cookie");
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    console.log(c);
+    if (c.indexOf("hcdemologin") === 0) {
+      const loginname = decodeURIComponent(c.substring("hcdemologin=".length, c.length));
+      const logincontainer = document.querySelector(".login-wrapper");
+      if (logincontainer) {
+        const signinlabel = logincontainer.querySelector("#signinlabel");
+        signinlabel.textContent = "Welcome, " + loginname;
+        const nameinput = logincontainer.querySelector("input");
+        nameinput.value = loginname;
+      } else {
+        console.log("couldn't find login wrapper");
+      }
+    }
+  }
+  const ecid = sessionStorage.getItem("com.adobe.reactor.dataElements.ECID");
+  console.log("ecid: " + ecid);
+}
+
 async function loadPage() {
   window.wbgData ||= {};
   await loadEager(document);
   await loadLazy(document);
+  await loadLast(document);
   loadDelayed();
 }
 
