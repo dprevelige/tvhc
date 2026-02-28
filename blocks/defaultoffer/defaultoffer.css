@@ -1,0 +1,12 @@
+.defaultoffer {
+  margin: 1.5rem 0;
+}
+
+.defaultoffer-content {
+  text-align: center;
+  margin: 0 auto;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}

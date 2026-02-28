@@ -185,6 +185,7 @@
       	"teaser",
       	"text",
         "textblock",
+      	"defaultoffer",
       	"title",
       	"video",
         "form",
