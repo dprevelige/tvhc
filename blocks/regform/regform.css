@@ -25,10 +25,10 @@
   margin-bottom: 0.25rem;
 }
 
-.regform-field .single-col {
+.regform-field.single-col {
   flex-basis: 90%;
 }
-.regform-field .double-col {
+.regform-field.double-col {
   flex-basis: 45%;
 }
 
