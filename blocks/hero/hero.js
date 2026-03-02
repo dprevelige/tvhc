@@ -9,15 +9,15 @@ import { readBlockConfig } from '../../scripts/aem.js';
 export default function decorate(block) {
   const properties = readBlockConfig(block);
   // Get the enable underline setting from the block content (3rd div)
-  const enableUnderline = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || 'true';
+  const enableUnderline = block.querySelector(':scope div:nth-child(4) > div')?.textContent?.trim() || 'true';
   
   // Get the layout Style from the block content (4th div)
-  const layoutStyle = block.querySelector(':scope div:nth-child(4) > div')?.textContent?.trim() || 'overlay';
+  const layoutStyle = block.querySelector(':scope div:nth-child(5) > div')?.textContent?.trim() || 'overlay';
 
   // Get the CTA style from the block content (5th div)
-  const ctaStyle = block.querySelector(':scope div:nth-child(5) > div')?.textContent?.trim() || 'default';
+  const ctaStyle = block.querySelector(':scope div:nth-child(6) > div')?.textContent?.trim() || 'default';
 
-  const backgroundStyle = block.querySelector(':scope div:nth-child(6) > div')?.textContent?.trim() || 'default';
+  const backgroundStyle = block.querySelector(':scope div:nth-child(7) > div')?.textContent?.trim() || 'default';
 
   if(layoutStyle){
      block.classList.add(`${layoutStyle}`);
