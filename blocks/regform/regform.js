@@ -102,11 +102,11 @@ function addOptionsToSelect(select, optionString) {
 }
 
 export default function decorate(block) {
-  const eventNamesMaybe = block.querySelector('regform-event-names').value;
-  const specialties = block.querySelector('regform-specialties').value;
+  const eventNamesMaybe = block.querySelector('regform-event-names')?.value;
+  const specialties = block.querySelector('regform-specialties')?.value;
   const eventNames = block.querySelector(':scope div:nth-child(1) > div');
-console.log(eventNames);
-console.log(eventNamesMaybe);
+console.log("eventNames: " + eventNames);
+console.log("eventNamesMaybe: " + eventNamesMaybe);
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
