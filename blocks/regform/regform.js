@@ -104,8 +104,9 @@ function addOptionsToSelect(select, optionString) {
 export default function decorate(block) {
   const specialties = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim() || 'none';;
   const eventNames = block.querySelector(':scope div:nth-child(1) > div')?.textContent?.trim() || 'none';;
-console.log("eventNames: " + eventNames);
-console.log("specialties: " + specialties);
+  const redirectUrl = block.querySelector(':scope div:nth-child(3) > div')?.textContent?.trim() || 'none';;
+console.log("redirectUrl: " + redirectUrl);
+
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
@@ -113,24 +114,27 @@ console.log("specialties: " + specialties);
 
   // Event Name (select, required)
   const eventSelect = createSelect('eventName', 'regform-event-name');
+  const eventPlaceholder = document.createElement('option');
+  eventPlaceholder.value = '';
+  eventPlaceholder.textContent = 'Select Event';
+  eventPlaceholder.disabled = true;
+  eventPlaceholder.selected = true;
+  eventSelect.append(eventPlaceholder);
   addOptionsToSelect(eventSelect, eventNames);
-  // const eventPlaceholder = document.createElement('option');
-  // eventPlaceholder.value = '';
-  // eventPlaceholder.textContent = 'Select Event';
-  // eventPlaceholder.disabled = true;
-  // eventPlaceholder.selected = true;
-  // eventSelect.append(eventPlaceholder);
   eventSelect.required = true;
+  eventSelect.classList.add('single-col');
   form.append(createFieldWrapper('Event Name', eventSelect, true));
 
   // First Name (text, required)
   const firstNameInput = createInput('text', 'firstName', 'regform-first-name', 'First Name');
   firstNameInput.required = true;
+  firstNameInput.classList.add('double-col');
   form.append(createFieldWrapper('First Name', firstNameInput, true));
 
   // Last Name (text, required)
   const lastNameInput = createInput('text', 'lastName', 'regform-last-name', 'Last Name');
   lastNameInput.required = true;
+  lastNameInput.classList.add('double-col');
   form.append(createFieldWrapper('Last Name', lastNameInput, true));
 
   // State (select, required)
@@ -171,17 +175,23 @@ console.log("specialties: " + specialties);
   addOptionsToSelect(specialtySelect, specialties);
 
   specialtySelect.required = true;
+  specialtySelect.classList.add('single-col');
   form.append(createFieldWrapper('Specialty', specialtySelect, true));
 
   // Submit button
   const submitWrapper = document.createElement('div');
   submitWrapper.classList.add('regform-actions');
   const submitButton = document.createElement('button');
-  submitButton.type = 'submit';
+  submitButton.type = 'button';
   submitButton.classList.add('regform-submit');
   submitButton.textContent = 'Submit';
   submitWrapper.append(submitButton);
-
+  submitButton.addEventListener('click', () => {
+    console.log('submitButton clicked');
+    // Fake form submission
+    form.reset();
+    window.location.href = redirectUrl;
+  });
   form.append(submitWrapper);
 
   // Replace original block content

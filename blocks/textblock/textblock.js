@@ -11,6 +11,8 @@ export default function decorate(block) {
 
   if (textCell) {
     content.innerHTML = textCell.innerHTML;
+  } else {
+    content.innerHTML = "PLACEHOLDER";
   }
 
   inner.append(content);

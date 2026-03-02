@@ -32,6 +32,13 @@
             "name": "specialties",
             "value": "",
             "label": "Specialties (comma separated)"
+          },{
+            "component": "aem-content",
+            "name": "redirectUrl",
+            "label": "Redirect URL",
+            "valueType": "string",
+            "rootPath": "",
+            "description": "Path to linked AEM content"
           }
         ]
       }

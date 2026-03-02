@@ -358,7 +358,7 @@ async function handleLoginCookie(loginWrapper) {
   const ca = document.cookie.split(';');
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i].trim();
-    console.log(c);
+    // console.log(c);
     if (c.indexOf("hcdemologin") === 0) {
       const loginname = decodeURIComponent(c.substring("hcdemologin=".length, c.length));
       //const logincontainer = doc.querySelector(".login-wrapper");

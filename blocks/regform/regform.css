@@ -25,6 +25,13 @@
   margin-bottom: 0.25rem;
 }
 
+.regform-field .single-col {
+  flex-basis: 90%;
+}
+.regform-field .double-col {
+  flex-basis: 45%;
+}
+
 .regform-required {
   color: var(--form-error-color, #ff5f3f);
 }
