@@ -361,6 +361,18 @@
     ]
   },
   {
+    "id": "defaultoffer",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "dynamic-media-image",
     "fields": [
       {
@@ -5809,6 +5821,25 @@
         "value": "",
         "label": "Attribution",
         "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "regform",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "eventNames",
+        "value": "",
+        "label": "Event Names (comma separated)"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "specialties",
+        "value": "",
+        "label": "Specialties (comma separated)"
       }
     ]
   },
