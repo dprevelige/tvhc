@@ -4,7 +4,7 @@ export default function decorate(block) {
   const content = document.createElement('div');
   content.classList.add('defaultoffer-content');
 
-  if (textCell) {
+  if (textCell && textCell.innerHTML?.hasChildNodes()) {
     content.innerHTML = textCell.innerHTML;
   } else {
     content.innerHTML = "PLACEHOLDER";
