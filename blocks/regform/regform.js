@@ -102,11 +102,10 @@ function addOptionsToSelect(select, optionString) {
 }
 
 export default function decorate(block) {
-  const eventNamesMaybe = block.querySelector('regform-event-names')?.value;
-  const specialties = block.querySelector('regform-specialties')?.value;
-  const eventNames = block.querySelector(':scope div:nth-child(1) > div');
+  const specialties = block.querySelector(':scope div:nth-child(2) > div')?.textContent?.trim() || 'none';;
+  const eventNames = block.querySelector(':scope div:nth-child(1) > div')?.textContent?.trim() || 'none';;
 console.log("eventNames: " + eventNames);
-console.log("eventNamesMaybe: " + eventNamesMaybe);
+console.log("specialties: " + specialties);
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
@@ -169,12 +168,7 @@ console.log("eventNamesMaybe: " + eventNamesMaybe);
   specialtyPlaceholder.selected = true;
   specialtySelect.append(specialtyPlaceholder);
 
-  ['Oncology', 'Neurology'].forEach((specialty) => {
-    const option = document.createElement('option');
-    option.value = specialty;
-    option.textContent = specialty;
-    specialtySelect.append(option);
-  });
+  addOptionsToSelect(specialtySelect, specialties);
 
   specialtySelect.required = true;
   form.append(createFieldWrapper('Specialty', specialtySelect, true));
