@@ -504,22 +504,44 @@ picture {
   position: absolute;
   top: 12%;
 }
+.neuropax-theme .hero.block.overlay div:nth-child(3) {
+  position: absolute;
+  top: 12%;
+}
 }
 @media (width < 1200px ) and (width >= 900px){
   .neuropax-theme .hero.block.overlay div:nth-child(2) {
     position: absolute;
     top: 12%;
+    left: 5%
+  }
+  .neuropax-theme .hero.block.overlay div:nth-child(3) {
+    position: absolute;
+    top: 52%;
+    left: 5%
   }
   }
   @media (width < 1600px ) and (width >= 1200px){
     .neuropax-theme .hero.block.overlay div:nth-child(2) {
       position: absolute;
       top: 18%;
+      left: 5%
+    }
+    .neuropax-theme .hero.block.overlay div:nth-child(3) {
+      position: absolute;
+      top: 68%;
+      left: 5%
     }
     }  
 @media (width >= 1600px) {
   .neuropax-theme .hero.block.overlay div:nth-child(2) {
     position: absolute;
     top: 28%;
+    left: 5%
+  }
+  .neuropax-theme .hero.block.overlay div:nth-child(3) {
+    position: absolute;
+    top: 68%;
+    left: 5%
   }
   }

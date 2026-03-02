@@ -110,7 +110,7 @@ console.log("redirectUrl: " + redirectUrl);
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
-  form.action = 'https://hook.app.workfrontfusion.com/yd8it6ivn9muqn8x4f4v9jdx1sfef2ew';
+  form.action = 'https://440115-191salmonscallop.adobeioruntime.net/api/v1/web/formstorm/wehc';
 
   // Event Name (select, required)
   const eventSelect = createSelect('eventName', 'regform-event-name');
@@ -189,6 +189,7 @@ console.log("redirectUrl: " + redirectUrl);
   submitButton.addEventListener('click', () => {
     console.log('submitButton clicked');
     // Fake form submission
+    form.submit();
     form.reset();
     window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters/', '');
   });

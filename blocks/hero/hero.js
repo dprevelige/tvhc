@@ -47,22 +47,22 @@ export default function decorate(block) {
   }
 
   // Optional: Remove the configuration divs after reading them to keep the DOM clean
-  const underlineDiv = block.querySelector(':scope div:nth-child(3)');
+  const underlineDiv = block.querySelector(':scope div:nth-child(4)');
   if (underlineDiv) {
     underlineDiv.style.display = 'none';
   }
   
-  const layoutStyleDiv = block.querySelector(':scope div:nth-child(4)');
+  const layoutStyleDiv = block.querySelector(':scope div:nth-child(5)');
   if (layoutStyleDiv) {
     layoutStyleDiv.style.display = 'none';
   }
 
-  const ctaStyleDiv = block.querySelector(':scope div:nth-child(5)');
+  const ctaStyleDiv = block.querySelector(':scope div:nth-child(6)');
   if (ctaStyleDiv) {
     ctaStyleDiv.style.display = 'none';
   }
 
-  const backgroundStyleDiv = block.querySelector(':scope div:nth-child(6)');
+  const backgroundStyleDiv = block.querySelector(':scope div:nth-child(7)');
   if (backgroundStyleDiv) {
     backgroundStyleDiv.style.display = 'none';
   }
