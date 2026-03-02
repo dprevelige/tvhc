@@ -52,9 +52,9 @@ const STATES = [
   'Wyoming',
 ];
 
-function createFieldWrapper(labelText, inputElement, required = false) {
+function createFieldWrapper(labelText, inputElement, required = false, className = '') {
   const wrapper = document.createElement('div');
-  wrapper.classList.add('regform-field');
+  wrapper.classList.add('regform-field', className);
 
   const label = document.createElement('label');
   label.textContent = labelText;
@@ -122,20 +122,20 @@ console.log("redirectUrl: " + redirectUrl);
   eventSelect.append(eventPlaceholder);
   addOptionsToSelect(eventSelect, eventNames);
   eventSelect.required = true;
-  eventSelect.classList.add('single-col');
-  form.append(createFieldWrapper('Event Name', eventSelect, true));
+ // eventSelect.classList.add('single-col');
+  form.append(createFieldWrapper('Event Name', eventSelect, true, 'single-col'));
 
   // First Name (text, required)
   const firstNameInput = createInput('text', 'firstName', 'regform-first-name', 'First Name');
   firstNameInput.required = true;
-  firstNameInput.classList.add('double-col');
-  form.append(createFieldWrapper('First Name', firstNameInput, true));
+ // firstNameInput.classList.add('double-col');
+  form.append(createFieldWrapper('First Name', firstNameInput, true, 'double-col'));
 
   // Last Name (text, required)
   const lastNameInput = createInput('text', 'lastName', 'regform-last-name', 'Last Name');
   lastNameInput.required = true;
-  lastNameInput.classList.add('double-col');
-  form.append(createFieldWrapper('Last Name', lastNameInput, true));
+ // lastNameInput.classList.add('double-col');
+  form.append(createFieldWrapper('Last Name', lastNameInput, true, 'double-col'));
 
   // State (select, required)
   const stateSelect = createSelect('state', 'regform-state');
@@ -152,16 +152,16 @@ console.log("redirectUrl: " + redirectUrl);
     stateSelect.append(option);
   });
   stateSelect.required = true;
-  form.append(createFieldWrapper('State', stateSelect, true));
+  form.append(createFieldWrapper('State', stateSelect, true, 'triple-col'));
 
   // Phone (tel)
   const phoneInput = createInput('tel', 'phone', 'regform-phone', 'Phone');
-  form.append(createFieldWrapper('Phone', phoneInput, false));
+  form.append(createFieldWrapper('Phone', phoneInput, false, 'triple-col'));
 
   // Email (email, required)
   const emailInput = createInput('email', 'email', 'regform-email', 'Email');
   emailInput.required = true;
-  form.append(createFieldWrapper('Email', emailInput, true));
+  form.append(createFieldWrapper('Email', emailInput, true, 'triple-col'));
 
   // Specialty (select with Oncology / Neurology, required)
   const specialtySelect = createSelect('specialty', 'regform-specialty');
@@ -175,8 +175,8 @@ console.log("redirectUrl: " + redirectUrl);
   addOptionsToSelect(specialtySelect, specialties);
 
   specialtySelect.required = true;
-  specialtySelect.classList.add('single-col');
-  form.append(createFieldWrapper('Specialty', specialtySelect, true));
+ // specialtySelect.classList.add('single-col');
+  form.append(createFieldWrapper('Specialty', specialtySelect, true, 'single-col'));
 
   // Submit button
   const submitWrapper = document.createElement('div');
