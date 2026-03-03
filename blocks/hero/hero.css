@@ -499,49 +499,76 @@ picture {
   color: var(--text-light);
 }
 
+.neuropax-theme .hero.block.overlay h1,.neuropax-theme .hero.block.overlay h2,.neuropax-theme .hero.block.overlay h3,.neuropax-theme .hero.block.overlay h4,.neuropax-theme .hero.block.overlay h5,.neuropax-theme .hero.block.overlay h6,.neuropax-theme .hero.block.overlay p {
+  color: var(--brand-theme-color);
+}
 @media (width < 900px) {
 .neuropax-theme .hero.block.overlay div:nth-child(2) {
   position: absolute;
-  top: 12%;
+  top: 5%;
+  left: 3%;
+  padding: 5px;
+  max-width: 48%;
 }
 .neuropax-theme .hero.block.overlay div:nth-child(3) {
   position: absolute;
-  top: 12%;
+  bottom: 5%;
+  left: 3%;
+  padding: 5px;
+  font-size: 1.3rem;
+  max-width: 48%;
+}
+.neuropax-theme .hero.block.overlay h1 {
+  font-size: var(--heading-font-size-xl);
 }
 }
 @media (width < 1200px ) and (width >= 900px){
   .neuropax-theme .hero.block.overlay div:nth-child(2) {
     position: absolute;
-    top: 12%;
-    left: 5%
+    top: 10%;
+    left: 4%;
+    padding: 10px;
+    max-width: 48%;
   }
   .neuropax-theme .hero.block.overlay div:nth-child(3) {
     position: absolute;
-    top: 52%;
-    left: 5%
+    bottom: 10%;
+    left: 4%;
+    padding: 10px;
+    font-size: 1.3rem;
+    max-width: 48%;
   }
   }
   @media (width < 1600px ) and (width >= 1200px){
     .neuropax-theme .hero.block.overlay div:nth-child(2) {
       position: absolute;
-      top: 18%;
-      left: 5%
+      top: 10%;
+      left: 4%;
+      padding: 10px;
+      max-width: 48%;
     }
     .neuropax-theme .hero.block.overlay div:nth-child(3) {
       position: absolute;
-      top: 68%;
-      left: 5%
+      bottom: 10%;
+      left: 4%;
+      padding: 10px;
+      font-size: 1.3rem;
+      max-width: 48%;
     }
     }  
 @media (width >= 1600px) {
   .neuropax-theme .hero.block.overlay div:nth-child(2) {
     position: absolute;
-    top: 28%;
-    left: 5%
+    top: 10%;
+    left: 10%;
+    max-width: 42%;
   }
   .neuropax-theme .hero.block.overlay div:nth-child(3) {
     position: absolute;
-    top: 68%;
-    left: 5%
+    bottom: 10%;
+    left: 10%;
+    padding: 20px;
+    font-size: 1.3rem;
+    max-width: 42%;
   }
   }
