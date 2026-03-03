@@ -502,73 +502,51 @@ picture {
 .neuropax-theme .hero.block.overlay h1,.neuropax-theme .hero.block.overlay h2,.neuropax-theme .hero.block.overlay h3,.neuropax-theme .hero.block.overlay h4,.neuropax-theme .hero.block.overlay h5,.neuropax-theme .hero.block.overlay h6,.neuropax-theme .hero.block.overlay p {
   color: var(--brand-theme-color);
 }
-@media (width < 900px) {
 .neuropax-theme .hero.block.overlay div:nth-child(2) {
   position: absolute;
-  top: 5%;
-  left: 3%;
-  padding: 5px;
-  max-width: 48%;
+  width: 1280px;
+  height: 300px;;
+  margin: auto;
 }
 .neuropax-theme .hero.block.overlay div:nth-child(3) {
   position: absolute;
-  bottom: 5%;
-  left: 3%;
-  padding: 5px;
-  font-size: 1.3rem;
-  max-width: 48%;
+  width: 1280px;
+  height: 300px;;
+  margin: auto;
+  bottom: 0;
 }
-.neuropax-theme .hero.block.overlay h1 {
-  font-size: var(--heading-font-size-xl);
+.neuropax-theme .hero.block.overlay div:nth-child(2) > div {
+  max-width: 50%;
 }
+.neuropax-theme .hero.block.overlay div:nth-child(3) > div {
+  max-width: 50%;
 }
-@media (width < 1200px ) and (width >= 900px){
+
+@media (width < 900px) {
   .neuropax-theme .hero.block.overlay div:nth-child(2) {
-    position: absolute;
-    top: 10%;
-    left: 4%;
-    padding: 10px;
-    max-width: 48%;
   }
   .neuropax-theme .hero.block.overlay div:nth-child(3) {
-    position: absolute;
-    bottom: 10%;
-    left: 4%;
-    padding: 10px;
-    font-size: 1.3rem;
-    max-width: 48%;
+  }
+  .neuropax-theme .hero.block.overlay h1 {
+    font-size: var(--heading-font-size-xl);
   }
   }
-  @media (width < 1600px ) and (width >= 1200px){
+  @media (width < 1200px ) and (width >= 900px){
     .neuropax-theme .hero.block.overlay div:nth-child(2) {
-      position: absolute;
-      top: 10%;
-      left: 4%;
-      padding: 10px;
-      max-width: 48%;
     }
     .neuropax-theme .hero.block.overlay div:nth-child(3) {
-      position: absolute;
-      bottom: 10%;
-      left: 4%;
-      padding: 10px;
-      font-size: 1.3rem;
-      max-width: 48%;
     }
-    }  
-@media (width >= 1600px) {
-  .neuropax-theme .hero.block.overlay div:nth-child(2) {
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    max-width: 42%;
-  }
-  .neuropax-theme .hero.block.overlay div:nth-child(3) {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    padding: 20px;
-    font-size: 1.3rem;
-    max-width: 42%;
-  }
+    }
+    @media (width < 1600px ) and (width >= 1200px){
+      .neuropax-theme .hero.block.overlay div:nth-child(2) {
+      }
+      .neuropax-theme .hero.block.overlay div:nth-child(3) {
+      }
+      }  
+  @media (width >= 1600px) {
+    .neuropax-theme .hero.block.overlay div:nth-child(2) {
+    }
+    .neuropax-theme .hero.block.overlay div:nth-child(3) {
+
+    }
   }
