@@ -110,7 +110,7 @@ console.log("redirectUrl: " + redirectUrl);
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
-  form.action = 'https://440115-191salmonscallop.adobeioruntime.net/api/v1/web/formstorm/wehc';
+  form.action = 'https://hook.app.workfrontfusion.com/yd8it6ivn9muqn8x4f4v9jdx1sfef2ew'; //'https://440115-191salmonscallop.adobeioruntime.net/api/v1/web/formstorm/wehc';
 
   // Event Name (select, required)
   const eventSelect = createSelect('eventName', 'regform-event-name');
@@ -216,12 +216,17 @@ console.log("redirectUrl: " + redirectUrl);
     event.preventDefault();
 
     const submitUrl = form.action; 
+    const encType = 'application/x-www-form-urlencoded';
     const redirectUrl = 'https://main--tvhc--dprevelige.aem.page/en/pharma/neuropax/events/registration-confirmation'; 
     const formData = new FormData(this);
+    const urlEncodedData = new URLSearchParams(formData);
 
     fetch(submitUrl, {
         method: 'POST', 
-        body: formData,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: urlEncodedData,
     })
     .then(response => {
         if (response.ok) {
