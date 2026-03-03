@@ -161,6 +161,14 @@ console.log("redirectUrl: " + redirectUrl);
   // Email (email, required)
   const emailInput = createInput('email', 'email', 'regform-email', 'Email');
   emailInput.required = true;
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf("hcdemologin") === 0) {
+      const loginname = decodeURIComponent(c.substring("hcdemologin=".length, c.length));
+      emailInput.value = loginname;
+    }
+  }
   form.append(createFieldWrapper('Email', emailInput, true, 'triple-col'));
 
   // Specialty (select with Oncology / Neurology, required)
@@ -190,17 +198,17 @@ console.log("redirectUrl: " + redirectUrl);
   const submitWrapper = document.createElement('div');
   submitWrapper.classList.add('regform-actions');
   const submitButton = document.createElement('button');
-  submitButton.type = 'button';
+  submitButton.type = 'submit';
   submitButton.classList.add('regform-submit');
   submitButton.textContent = 'Submit';
   submitWrapper.append(submitButton);
-  submitButton.addEventListener('click', () => {
-    console.log('submitButton clicked');
+  // submitButton.addEventListener('click', () => {
+    // console.log('submitButton clicked');
     // Fake form submission
-    form.submit();
+    // form.submit();
  
-    window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters', '');
-  });
+    //window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters', '');
+  // });
   form.append(submitWrapper);
 
   // Replace original block content
