@@ -95,8 +95,8 @@ function addOptionsToSelect(select, optionString) {
   const options = optionString.split(',');
   options.forEach((option) => {
     const optionElement = document.createElement('option');
-    optionElement.value = option;
-    optionElement.textContent = option;
+    optionElement.value = option?.trim();
+    optionElement.textContent = option?.trim();
     select.append(optionElement);
   });
 }
@@ -110,7 +110,7 @@ console.log("redirectUrl: " + redirectUrl);
   const form = document.createElement('form');
   form.classList.add('regform-form');
   form.method = 'post';
-  form.action = 'https://hook.app.workfrontfusion.com/yd8it6ivn9muqn8x4f4v9jdx1sfef2ew'; //'https://440115-191salmonscallop.adobeioruntime.net/api/v1/web/formstorm/wehc';
+  form.action = 'https://440115-191salmonscallop.adobeioruntime.net/api/v1/web/formstorm/wehc'; //'https://hook.app.workfrontfusion.com/yd8it6ivn9muqn8x4f4v9jdx1sfef2ew'; //
 
   // Event Name (select, required)
   const eventSelect = createSelect('eventName', 'regform-event-name');
