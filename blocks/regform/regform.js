@@ -198,8 +198,8 @@ console.log("redirectUrl: " + redirectUrl);
     console.log('submitButton clicked');
     // Fake form submission
     form.submit();
-    form.reset();
-    window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters/', '');
+ 
+    window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters', '');
   });
   form.append(submitWrapper);
 
