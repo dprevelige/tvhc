@@ -209,8 +209,31 @@ console.log("redirectUrl: " + redirectUrl);
  
     //window.location.href = redirectUrl.replace('/content/wehealthcare/language-masters', '');
   // });
-  form.append(submitWrapper);
 
+  form.append(submitWrapper);
+  form.addEventListener('submit', function(event) {
+    
+    event.preventDefault();
+
+    const submitUrl = form.action; 
+    const redirectUrl = 'https://main--tvhc--dprevelige.aem.page/en/pharma/neuropax/events/registration-confirmation'; 
+    const formData = new FormData(this);
+
+    fetch(submitUrl, {
+        method: 'POST', 
+        body: formData,
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = redirectUrl;
+        } else {
+            console.error('Form submission failed with status:', response.status);
+        }
+    })
+    .catch(error => {
+        console.error('Network error during form submission:', error);
+    });
+  });
   // Replace original block content
   block.innerHTML = '';
   block.append(form);
