@@ -9,7 +9,7 @@ export default function decorate(block) {
   const content = document.createElement('div');
   content.classList.add('textblock-content');
 
-  if (textCell) {
+  if (textCell && textCell.innerHTML.textContent) {
     content.innerHTML = textCell.innerHTML;
   } else {
     content.innerHTML = "PLACEHOLDER";
