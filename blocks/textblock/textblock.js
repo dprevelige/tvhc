@@ -9,6 +9,7 @@ export default function decorate(block) {
   const content = document.createElement('div');
   content.classList.add('textblock-content');
 
+  //why not updating
   if (textCell && textCell.textContent.trim().length > 0) {
     content.innerHTML = textCell.innerHTML;
   } else {
