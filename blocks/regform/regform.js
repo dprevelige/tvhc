@@ -178,6 +178,14 @@ console.log("redirectUrl: " + redirectUrl);
  // specialtySelect.classList.add('single-col');
   form.append(createFieldWrapper('Specialty', specialtySelect, true, 'single-col'));
 
+  // hidden ecid field
+  const ecidInput = createInput('hidden', 'ecid', 'regform-ecid', '');
+  const ecid = sessionStorage.getItem("com.adobe.reactor.dataElements.ECID");
+
+  console.log("ecid: " + ecid);
+  ecidInput.value = ecid;
+  form.append(createFieldWrapper('ecid', ecidInput, false, 'hidden-field'));
+
   // Submit button
   const submitWrapper = document.createElement('div');
   submitWrapper.classList.add('regform-actions');

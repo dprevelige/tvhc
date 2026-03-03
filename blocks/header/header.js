@@ -372,8 +372,6 @@ async function handleLoginCookie(loginWrapper) {
       //}
     }
   }
-  const ecid = sessionStorage.getItem("com.adobe.reactor.dataElements.ECID");
-  console.log("ecid: " + ecid);
 }
 
 async function addLogoLink(langCode) {

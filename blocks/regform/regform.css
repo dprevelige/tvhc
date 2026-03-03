@@ -31,7 +31,9 @@
 .regform-field.double-col {
   flex-basis: 45%;
 }
-
+.regform-field.hidden-field {
+  display: none;
+}
 .regform-required {
   color: var(--form-error-color, #ff5f3f);
 }
