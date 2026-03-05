@@ -1,4 +1,7 @@
 .safetyindication {
+  max-width: 1000px;
+  margin: auto;
+  color: #333;
   position: fixed;
   inset-inline: 0;
   bottom: 0;
