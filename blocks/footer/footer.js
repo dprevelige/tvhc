@@ -28,7 +28,7 @@ export default async function decorate(block) {
     ? new URL(footerMeta, window.location).pathname
     : `/content/${siteName}${PATH_PREFIX}/${langCode}${microfoot}/footer`;
   } else {
-    footerPath = `/${langCode}${micronav}/footer`; 
+    footerPath = `/${langCode}${microfoot}/footer`; 
   }
 
   /*
