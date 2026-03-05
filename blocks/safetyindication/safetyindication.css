@@ -72,6 +72,10 @@
   margin: 0;
 }
 
+.safetyindication-content h3 {
+  margin-top: 0;
+}
+
 @media (width >= 900px) {
   .safetyindication {
     height: 100px;
