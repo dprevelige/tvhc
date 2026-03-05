@@ -5859,6 +5859,18 @@
     ]
   },
   {
+    "id": "safetyindication",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      }
+    ]
+  },
+  {
     "id": "search",
     "fields": [
       {
