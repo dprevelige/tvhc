@@ -1,5 +1,6 @@
 .defaultoffer {
-  margin: 1.5rem 0;
+  margin: 1.5rem auto;
+  max-width: 90%;
 }
 
 .defaultoffer-content {
