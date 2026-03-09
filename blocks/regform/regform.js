@@ -1,55 +1,55 @@
 const STATES = [
-  'Alabama',
-  'Alaska',
-  'Arizona',
-  'Arkansas',
-  'California',
-  'Colorado',
-  'Connecticut',
-  'Delaware',
-  'District of Columbia',
-  'Florida',
-  'Georgia',
-  'Hawaii',
-  'Idaho',
-  'Illinois',
-  'Indiana',
-  'Iowa',
-  'Kansas',
-  'Kentucky',
-  'Louisiana',
-  'Maine',
-  'Maryland',
-  'Massachusetts',
-  'Michigan',
-  'Minnesota',
-  'Mississippi',
-  'Missouri',
-  'Montana',
-  'Nebraska',
-  'Nevada',
-  'New Hampshire',
-  'New Jersey',
-  'New Mexico',
-  'New York',
-  'North Carolina',
-  'North Dakota',
-  'Ohio',
-  'Oklahoma',
-  'Oregon',
-  'Pennsylvania',
-  'Rhode Island',
-  'South Carolina',
-  'South Dakota',
-  'Tennessee',
-  'Texas',
-  'Utah',
-  'Vermont',
-  'Virginia',
-  'Washington',
-  'West Virginia',
-  'Wisconsin',
-  'Wyoming',
+  'Alabama|AL',
+  'Alaska|AK',
+  'Arizona|AZ',
+  'Arkansas|AR',
+  'California|CA',
+  'Colorado|CO',
+  'Connecticut|CT',
+  'Delaware|DE',
+  'District of Columbia|DC',
+  'Florida|FL',
+  'Georgia|GA',
+  'Hawaii|HI',
+  'Idaho|ID',
+  'Illinois|IL',
+  'Indiana|IN',
+  'Iowa|IA',
+  'Kansas|KS',
+  'Kentucky|KY',
+  'Louisiana|LA',
+  'Maine|ME',
+  'Maryland|MD',
+  'Massachusetts|MA',
+  'Michigan|MI',
+  'Minnesota|MN',
+  'Mississippi|MS',
+  'Missouri|MO',
+  'Montana|MT',
+  'Nebraska|NE',
+  'Nevada|NV',
+  'New Hampshire|NH',
+  'New Jersey|NJ',
+  'New Mexico|NM',
+  'New York|NY',
+  'North Carolina|NC',
+  'North Dakota|ND',
+  'Ohio|OH',
+  'Oklahoma|OK',
+  'Oregon|OR',
+  'Pennsylvania|PA',
+  'Rhode Island|RI',
+  'South Carolina|SC',
+  'South Dakota|SD',
+  'Tennessee|TN',
+  'Texas|TX',
+  'Utah|UT',
+  'Vermont|VT',
+  'Virginia|VA',
+  'Washington|WA',
+  'West Virginia|WV',
+  'Wisconsin|WI',
+  'Wyoming|WY',
 ];
 
 function createFieldWrapper(labelText, inputElement, required = false, className = '') {
@@ -91,12 +91,15 @@ function createInput(type, name, id, placeholder = '') {
   return input;
 }
 
-function addOptionsToSelect(select, optionString) {
-  const options = optionString.split(',');
+function addOptionsToSelect(select, options) {
+  //const options = optionString.split(',');
   options.forEach((option) => {
     const optionElement = document.createElement('option');
-    optionElement.value = option?.trim();
-    optionElement.textContent = option?.trim();
+    const idx = option.indexOf("|");
+    const value = option.substring(0,idx);
+    const text = option.substring(idx+1);
+    optionElement.value = value; //option?.trim();
+    optionElement.textContent = text; //option?.trim();
     select.append(optionElement);
   });
 }
@@ -120,7 +123,7 @@ console.log("redirectUrl: " + redirectUrl);
   eventPlaceholder.disabled = true;
   eventPlaceholder.selected = true;
   eventSelect.append(eventPlaceholder);
-  addOptionsToSelect(eventSelect, eventNames);
+  if (eventNames !== "none") addOptionsToSelect(eventSelect, eventNames.split(","));
   eventSelect.required = true;
  // eventSelect.classList.add('single-col');
   form.append(createFieldWrapper('Event Name', eventSelect, true, 'single-col'));
@@ -145,12 +148,13 @@ console.log("redirectUrl: " + redirectUrl);
   statePlaceholder.disabled = true;
   statePlaceholder.selected = true;
   stateSelect.append(statePlaceholder);
-  STATES.forEach((state) => {
-    const option = document.createElement('option');
-    option.value = state;
-    option.textContent = state;
-    stateSelect.append(option);
-  });
+  //STATES.forEach((state) => {
+  //  const option = document.createElement('option');
+  //  option.value = state;
+  //  option.textContent = state;
+  //  stateSelect.append(option);
+  //});
+  addOptionsToSelect(stateSelect,STATES)
   stateSelect.required = true;
   form.append(createFieldWrapper('State', stateSelect, true, 'triple-col'));
 
@@ -180,7 +184,7 @@ console.log("redirectUrl: " + redirectUrl);
   specialtyPlaceholder.selected = true;
   specialtySelect.append(specialtyPlaceholder);
 
-  addOptionsToSelect(specialtySelect, specialties);
+  if (specialties !== "none") addOptionsToSelect(specialtySelect, specialties.split(","));
 
   specialtySelect.required = true;
  // specialtySelect.classList.add('single-col');
