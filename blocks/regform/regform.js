@@ -96,8 +96,8 @@ function addOptionsToSelect(select, options) {
   options.forEach((option) => {
     const optionElement = document.createElement('option');
     const idx = option.indexOf("|");
-    const value = option.substring(0,idx);
-    const text = option.substring(idx+1);
+    const text = option.substring(0,idx);
+    const value = option.substring(idx+1);
     optionElement.value = value; //option?.trim();
     optionElement.textContent = text; //option?.trim();
     select.append(optionElement);
