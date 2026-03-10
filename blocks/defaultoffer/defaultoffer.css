@@ -1,6 +1,6 @@
 .defaultoffer {
   margin: 1.5rem auto;
-  max-width: 87%;
+  max-width: 90%;
   border: 2px solid #AAA;
   border-radius: 20px;
   padding: 20px;
@@ -26,10 +26,11 @@
 .offerblock-image {
   width: auto;
   padding-right: 30px;
+  max-width: 29%;
 }
 .offerblock-content {
   text-align: center;
-  width: 69%;
+  width: 70%;
 }
 .offerblock-content p {
   margin: 2px 0 10px 0;
