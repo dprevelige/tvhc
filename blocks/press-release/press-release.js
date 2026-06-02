@@ -75,7 +75,7 @@ export default async function decorate(block) {
       return;
     }
 
-    const cfReq = offer?.data?.ctaByPath?.item;
+    const cfReq = offer?.data?.pressReleaseByPath?.item;
 
     if (!cfReq) {
       console.error('Error parsing response from GraphQL request - no valid data found', {
