@@ -91,12 +91,12 @@ export default async function decorate(block) {
     block.setAttribute('data-aue-type', 'container');
     
     let bannerDetailStyle = '';
-    
+
     block.innerHTML = `<div class='banner-content block' data-aue-resource=${itemId} data-aue-label=${variationname || 'Elements'} data-aue-type="reference" data-aue-filter="contentfragment">
           <div class='banner-detail ${alignment}' style="${bannerDetailStyle}" data-aue-prop="bannerimage" data-aue-label="Main Image" data-aue-type="media" >
                 <h2 data-aue-prop="title" data-aue-label="Title" data-aue-type="text" class='cftitle'>${cfReq?.title}</h2>
                 <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'><strong>By: ${cfReq?.author}</strong></h3>
-                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'><strong>Date: ${cfReq?.date}</strong></h3>
+                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'>Date: ${cfReq?.date}</h3>
                 <div data-aue-prop="description" data-aue-label="Description" data-aue-type="richtext" class='cfdescription'><p>${cfReq?.copy?.plaintext || ''}</p></div>
               
             </div>

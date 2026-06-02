@@ -31,7 +31,7 @@
   background-position: center;
   margin: 0;
   padding: 60px;
-  color: var(--text-light);
+  color: var(--text-color);
   border-radius: inherit;
   text-align: center;
   display: flex;
@@ -65,7 +65,7 @@
   height: 5px;
   margin: auto;
   transition: width .4s ease-in-out;
-  width: 128px;
+  width: 256px;
   margin: 10px auto;
 }
 
@@ -75,6 +75,7 @@
   font-size: 16px;
   line-height: 24px;
   width: 60%;
+  text-align: left;
 }
 
 .press-release-wrapper .press-release .banner-content .banner-detail .cfdescription p {
