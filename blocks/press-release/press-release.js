@@ -90,6 +90,7 @@ export default async function decorate(block) {
     const itemId = `urn:aemconnection:${contentPath}/jcr:content/data/${variationname}`;
     block.setAttribute('data-aue-type', 'container');
     
+    let bannerDetailStyle = '';
     
     block.innerHTML = `<div class='banner-content block' data-aue-resource=${itemId} data-aue-label=${variationname || 'Elements'} data-aue-type="reference" data-aue-filter="contentfragment">
           <div class='banner-detail ${alignment}' style="${bannerDetailStyle}" data-aue-prop="bannerimage" data-aue-label="Main Image" data-aue-type="media" >
