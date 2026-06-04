@@ -104,6 +104,7 @@ export default async function decorate(block) {
                       ${cfReq?.ctaText}
                     </span>
                   </a>
+                <div data-aue-prop="contactInfo" data-aue-label="Contact Info" data-aue-type="richtext" class='cfdescription'>${cfReq?.contactInfo?.html || ''}</div>
             </div>
         </div>`;
   } catch (error) {
