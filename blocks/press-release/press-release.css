@@ -71,7 +71,7 @@
 
 
 .press-release-wrapper .press-release .banner-content .banner-detail .cfdescription {
-  margin: 20px 0;
+  margin: 30px 0;
   font-size: 16px;
   line-height: 24px;
   width: 60%;
@@ -97,6 +97,7 @@
   font-weight: 500;
   text-align: left;
   cursor: pointer;
+  margin-top: 20px;
 }
 .press-release-wrapper .press-release .banner-content .banner-detail a::after {
   font-family: 'Font Awesome 5 Solid';
