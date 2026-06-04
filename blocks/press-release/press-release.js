@@ -96,7 +96,8 @@ export default async function decorate(block) {
           <div class='banner-detail ${alignment}' style="${bannerDetailStyle}" data-aue-prop="bannerimage" data-aue-label="Main Image" data-aue-type="media" >
                 <h2 data-aue-prop="title" data-aue-label="Title" data-aue-type="text" class='cftitle'>${cfReq?.headline}</h2>
                 <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'><strong>${cfReq?.subheadline}</strong></h3>
-                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'>${cfReq?.date}</h3>
+                <h3 data-aue-prop="date" data-aue-label="Date" data-aue-type="text" class='cfsubtitle'>${cfReq?.date}</h3>
+                <div data-aue-prop="lede" data-aue-label="Lede" data-aue-type="text" class='lede'>${cfReq?.lede}</div>
                 <div data-aue-prop="description" data-aue-label="Description" data-aue-type="richtext" class='cfdescription'>${cfReq?.body?.html || ''}</div>
                 <a href="${cfReq?.ctaLink}" data-aue-prop="ctaLink" data-aue-label="Button Link/URL" data-aue-type="reference"  target="_blank" rel="noopener" data-aue-filter="page" class='button'>
                     <span data-aue-prop="ctaText" data-aue-label="Button Label" data-aue-type="text">
