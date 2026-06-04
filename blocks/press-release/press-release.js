@@ -95,8 +95,8 @@ export default async function decorate(block) {
     block.innerHTML = `<div class='banner-content block' data-aue-resource=${itemId} data-aue-label=${variationname || 'Elements'} data-aue-type="reference" data-aue-filter="contentfragment">
           <div class='banner-detail ${alignment}' style="${bannerDetailStyle}" data-aue-prop="bannerimage" data-aue-label="Main Image" data-aue-type="media" >
                 <h2 data-aue-prop="title" data-aue-label="Title" data-aue-type="text" class='cftitle'>${cfReq?.headline}</h2>
-                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'><strong>By: ${cfReq?.subheadline}</strong></h3>
-                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'>Date: ${cfReq?.date}</h3>
+                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'><strong>${cfReq?.subheadline}</strong></h3>
+                <h3 data-aue-prop="subtitle" data-aue-label="SubTitle" data-aue-type="text" class='cfsubtitle'>${cfReq?.date}</h3>
                 <div data-aue-prop="description" data-aue-label="Description" data-aue-type="richtext" class='cfdescription'><p>${cfReq?.body?.plaintext || ''}</p></div>
                 <a href="${cfReq?.ctaLink}" data-aue-prop="ctaLink" data-aue-label="Button Link/URL" data-aue-type="reference"  target="_blank" rel="noopener" data-aue-filter="page" class='button'>
                     <span data-aue-prop="ctaText" data-aue-label="Button Label" data-aue-type="text">

@@ -84,13 +84,13 @@
 
 .press-release-wrapper .press-release .banner-content .banner-detail a {
   display: inline-block;
-  padding: 0;
-  background-color: transparent;
-  color: var(--text-light);
+  padding: 8px 16px;
+  background-color: #3535d1;
+  color: #ffffff;
   text-decoration: none;
   outline: none;
   border: none;
-  border-radius: 0;
+  border-radius: 8px;
   font-size: 16px;
   font-family: var(--heading-font-family);
   line-height: 20px;
